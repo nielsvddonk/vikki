@@ -1,6 +1,6 @@
 @font-face {
     font-family: fontp;
-    src: url(fonts/font.otf);
+    src: url(fonts/leitura.otf);
 }
 
 @font-face {
@@ -17,161 +17,101 @@ body{
 }
 
 #wrapper {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   margin: 0;
-  overflow: hidden;
-
 }
 
-#left {
-	margin-top: 0px;
-  background-color: black;
+#title {
+  width: 50%;
+  height: 33px;
   float: left;
-  width: 15%;
-  height: 800px;
-  z-index: 99;
-  padding-top: 20px;
+  border-bottom: 0.5px solid black;
+  background-color: white;
 }
 
-#left h3 {
-font-size: 12px;
-color: yellow;
-text-align: center;
-font-family: "fontp";
-margin-bottom: 0px;
-}
-
-#left hr {
-background-color: yellow;
-size: 2px;
-}
-
-#left p{
-margin-top: 0px;
-color: yellow;
-font-family: "fontp";
-text-align:center;
-margin-bottom: 0px;
-animation: blinker 0.1s linear infinite;
-
+#title h1 {
+  font-family: "fontp";
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 10px;
+    animation: blinker 1s linear infinite;
 }
 
 @keyframes blinker {  
   50% { opacity: 0; }
 }
 
-#left input{
-margin-top: 20px;
-width: 100px;
-margin-left: 10px;
+#title img {
+  width: 20px;
+  float: left;
+  margin-top: -5px;
 }
 
-input[type=range] {
-    -webkit-appearance: none;
-    background-color: white;
-    width: 200px;
-    height:10px;
+#menu {
+  width: 50%;
+  height: 33px;
+  float: left;
+  border-bottom: 0.5px solid black;
+  background-color: white;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-     -webkit-appearance: none;
-    background-color: grey;
-    width: 10px;
-    height: 26px;
+#menu h1 {
+  font-family: "fontp";
+  font-size: 14px;
+  margin-top: 10px;
+  margin-right: 20px;
+  text-align: right;
 }
 
-#center {
-	float: left;
-	width: 70%;
-	height: 800px;
-	z-index: 98;
-}
-#random-text {
-	color: red;
-	width: 100%;
-	height: 100%;
-	z-index: 999;
+#menu h1 a {
+  text-decoration: none;
+  color: black;
 }
 
-#video {
-	z-index: -999;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	opacity: 1;
+#menu a:hover {
+  text-decoration: none;
+  color: red;
 }
 
-.rotated {
-background-color: red;
+#workmenu {
+  width: 10%;
+  height: 100%;
+  float: left;
+  position:absolute;
+  margin-top: 33px;
+  border-right: 0.5px solid black;
 }
 
-#logo1 {
-	position:absolute;
-	    -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    margin: auto;
+#workmenu h1 {
+  font-family: "fontp";
+  font-size: 14px;
+  padding-top: 50px;
+  margin-left: 20px;
+  text-align: left;
 }
 
-#logo1 img {
-	width: 20%;
+#rain img {
+  width: 10px;
 }
 
-#bluesquare.rotated {
-    -webkit-transform : rotate(20deg); 
-    -moz-transform : rotate(20deg); 
-    -ms-transform : rotate(20deg); 
-    -o-transform : rotate(20deg); 
-    transform : rotate(20deg); 
+h3 {
+    font-family: "fontp";
+  float: left;
+  text-align:center;
+    padding: 0;
+    font-size: 90px;
+    position: relative;
+    overflow: auto;
+    color: blue;
+    margin-left:40px;
+    margin-right:40px;
 }
-
-#right {
-	background-color: black;
-	float: left;
-	width: 15%;
-	height: 800px;
-	z-index: 99;
+.cover {
+    height: 500px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
-
-.box {
-width: 100%;
-height:800px;
-z-index: -999;
-margin: 0;
-display: block;
-}
-
-.transform-active {
-  background-image: -webkit-linear-gradient(270deg, #4ac1ff, #795bb0);
-  background-image: -moz-linear-gradient(270deg, #4ac1ff, #795bb0);
-  background-image: -o-linear-gradient(270deg, #4ac1ff, #795bb0);
-  background-image: -ms-linear-gradient(270deg, #4ac1ff, #795bb0);
-  background-image: linear-gradient(180deg, #4ac1ff, #795bb0);
-  animation: epeleptic .1s infinite alternate linear;
-  z-index: -999;
-  display: block;
-}
-#quote {
-line-height: 90%;
-position: absolute;
-width: 70%;
-height: 800px;
-z-index: 1000;
-text-align: center;
-padding-top: 200px;
-font-size: 90px;
-font-family: "fonttwee";
-color: yellow;
-}
-
-@keyframes epeleptic {
-  0%   {
-    background: transparent;
-  }
-  100% {
-    background: black;
-}
-}
-

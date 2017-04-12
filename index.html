@@ -5,185 +5,55 @@
 <script src="jquery-3.2.0.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script>
-    <!-- Hide the script from old browsers
-    function getQuote() {
-      // Create the arrays
-      quotes = new Array(4);
-      sources = new Array(4);
-
-      // Initialize the arrays with quotes
-      quotes[0] = "THUNDERDOME: WHERE LIFE BEGINS, AND LOVE NEVER ENDS";
-      quotes[1] = "I WANNA SEE THE RAINBOW HIGH IN THE SKY. I WANNA SEE YOU AND ME ON A BIRD FLYING AWAY";
-      quotes[2] = "AND THEN I HOPE TO SEE YOUR SMILE EVERY NIGHT AND DAY";
-      quotes[3] = "WE ARE THE CHILDREN OF THE NIGHT, AND FIGHT FOR THE FUTURE OF OUR NATION. COME TOGETHER AND DENY, NOTHING IS GONNA STOP US NOW";
-      quotes[4] = "NOW THE MUSIC IS HAPPENING, I WANT EVERYONE TO BE FREE AND EASY. CAPTAIN TAKE MY HAND, AND TAKE ME TO DISCOLAND";
-      quotes[5] = "SO BABY WON'T YOU COME WITH ME, AND WE CAN FLY ON THE POWER OF LOVE";
-
-      // Get a random index into the arrays
-      i = Math.floor(Math.random() * quotes.length);
-
-      // Write out the quote as HTML
-      document.write("<dt>" + quotes[i] + "</i>");
-    }
-    // Stop hiding the script -->
-  </script>
 </head>
 
-
-
-
 <body>
-    <div id="video"></div>
+
+
+
 <div id="wrapper">
-
-
-    <div id="left">
-<p>GABBER TV</p> <br>
-<input type="range" min="-360" max="360" value="-360" oninput="rotate(this.value)" onchange="rotate(this.value)"/>
+<div id="title">
+<h1><img src="images/cursor.gif">Victoria Louise Young</h1>
+</div>
+<div id="menu">
+<h1><a href="work.html">Work</a> <a href="about.html">About</a> <a href="contact.html">Contact</a></h1>
+</div>
+<div id="box2">
+<h3><span>Hello there my name is Vikki, I like to fart? Can you hear me? This is my portfolio?<span class="cover"></span></h3>
 <script>
-function rotate(value) {
-  document.getElementById('logo1').style.webkitTransform="rotate(" + value + "deg)";
-  document.getElementById('logo1').style.msTransform="rotate(" + value + "deg)";
-  document.getElementById('logo1').style.MozTransform="rotate(" + value + "deg)";
-  document.getElementById('logo1').style.OTransform="rotate(" + value + "deg)";
-  document.getElementById('logo1').style.transform="rotate(" + value + "deg)";
-}</script>
-<input type="button" id="button1" value="Stroboscope"></input><br><br>
-<p>Video</p>
-<input type="range" name="bgopacity" id="bgopacity" value="0" min="0" max="100" step="1" onchange="rangevalue.value=value">
-    <output id="rangevalue">50</output>
-    <script>// Opacity Slider
-$('#bgopacity').on('input', function (value) {
-    $('#video').css({
-        opacity: $(this).val() * '.01'
-    });
-});</script>
+var $p = $('h3'),
+    $cover = $('.cover'),
+    width = $p.width(),
+    decrement = width / $p.text().length;
 
-<input type="range" min="-360" max="360" value="-360" oninput="rotate2(this.value)" onchange="rotate2(this.value)"/>
-<script>
-function rotate2(value) {
-  document.getElementById('video').style.webkitTransform="rotate(" + value + "deg)";
-  document.getElementById('video').style.msTransform="rotate(" + value + "deg)";
-  document.getElementById('video').style.MozTransform="rotate(" + value + "deg)";
-  document.getElementById('video').style.OTransform="rotate(" + value + "deg)";
-  document.getElementById('video').style.transform="rotate(" + value + "deg)";
-}</script><br><br>
-
-<p>Text</p>
-<input type="button" id="randomtext" value="Random text"></input>
-<script>
-$("#randomtext").click(function() {
-    loadshit();
-  });
-
-var counter =0;
-function loadshit(){ 
-    counter++;
-     //run when the document's ready, elements are loaded
-     $("#quote").empty();
-    $("#quote").append(quotes[counter]);
-    if (counter>=quotes.length-1) {
-        counter =0;
+function addChar()
+{    
+    $cover.css('width', '-=' + decrement);
+    
+    if ( parseInt( $cover.css('width') ) < width )
+    {
+        setTimeout(addChar, 15);
     }
 }
+
+addChar();
 </script>
 
-<input type="range" min="-360" max="360" value="-360" oninput="rotate3(this.value)" onchange="rotate3(this.value)"/>
-<script>
-function rotate3(value) {
-  document.getElementById('quote').style.webkitTransform="rotate(" + value + "deg)";
-  document.getElementById('quote').style.msTransform="rotate(" + value + "deg)";
-  document.getElementById('quote').style.MozTransform="rotate(" + value + "deg)";
-  document.getElementById('quote').style.OTransform="rotate(" + value + "deg)";
-  document.getElementById('quote').style.transform="rotate(" + value + "deg)";
-}</script>
-    </div>
 
 
-    <div id="center">
-<div id="quote">
-    <script type="text/javascript">
-      <!-- Hide the script from old browsers
-      getQuote();
-      // Stop hiding the script -->
-    </script>
+
+</div>
+<div id="rain">
+  <script type="text/javascript" SRC="himagefall/picture-fall.js">
+         </script>
 </div>
 
-<div id="logo1">
-    <img src="images/ruffneck.png">
+
+
+
 </div>
-<div class="box transform"></div>
-      <script>$("#button1").click(function() {
-  $('.transform').toggleClass('transform-active');
-});</script>
 
 
-
-    </div>
-
-
-    <div id="right"></div>
-    </div>
-
-
-
-    <script>
-(function(window, document, undefined) {
-
-    'use strict';
-
-    function removeElement(array, element) {
-        return array.filter(function(el) {
-            return el !== element
-        });
-    }
-
-    function changeVideo() {
-        if (video.getCurrentTime() >= delay) {
-            var currentVideo = video.getVideoData().video_id,
-                randomVideo = removeElement(videoPlaylist, currentVideo)[Math.floor(Math.random() * (videoPlaylist.length - 1))];
-            video.loadVideoById(randomVideo);
-        }
-    }
-
-    function onPlayerStateChange(event) {
-        clearInterval(repeat);
-        if (event.data === 1) {
-            repeat = setInterval(changeVideo, 500);
-        }
-    }
-
-    window.onYouTubeIframeAPIReady = function() {
-        var randomVideo = videoPlaylist[Math.floor(Math.random() * videoPlaylist.length)];
-        video = new YT.Player('video', {
-            height: '315',
-            width: '560',
-            videoId: randomVideo,
-            playerVars: {
-                'autoplay': 1,
-                'controls': 0,
-                'showinfo': 0,
-               ' modestbranding': 1,
-                'iv_load_policy': 3
-            },
-            events: {
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-    var tag = document.createElement('script'),
-        player,
-        videoPlaylist = ['4eXqxsV_83M', 'ISmmZiuMxyo', '5HCNiXTkiIM', 'ix7qeLBWkm4', 'oAlRtCyr0sQ', '4wSr7h_pjxs', 'ZclaXQWVRCg'],
-        delay = 10, // s
-        repeat;
-
-    tag.src = 'https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-})(window, document);</script>
 
 </body>
 </html>
