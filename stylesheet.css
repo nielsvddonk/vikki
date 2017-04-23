@@ -1,117 +1,173 @@
 @font-face {
-    font-family: fontp;
-    src: url(fonts/leitura.otf);
+    font-family: euro;
+    src: url(fonts/EurostileLTStd.otf);
 }
 
-@font-face {
-    font-family: fonttwee;
-    src: url(fonts/dharma.ttf);
+body {
+	width:100%;
+	height: 500px;
+	margin: 0;
+	background-color:yellow;
+	overflow:hidden;
 }
-
-
-body{
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-}
-
 #wrapper {
-  width: 100%;
-  height: 100%;
-  margin: 0;
+	width:100%;
+	height:100%;
+	position: fixed;
+	z-index: 1000;
 }
 
-#title {
-  width: 50%;
-  height: 33px;
-  float: left;
-  border-bottom: 0.5px solid black;
-  background-color: white;
+#background {
+	margin-left:-20px;
+	width: 100%;
+	z-index:0;
+	position:fixed;
 }
 
-#title h1 {
-  font-family: "fontp";
-  font-size: 14px;
-  margin-top: 10px;
-  margin-left: 10px;
-    animation: blinker 1s linear infinite;
+#background img {
+	width: 110%;
+	 -webkit-animation-name: steam;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-name: steam;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
 }
 
-@keyframes blinker {  
-  50% { opacity: 0; }
+@-webkit-keyframes steam {
+    0%, 100% {
+        -webkit-transform: skewX(0deg);
+        opacity: 1;        
+    }
+    25% { -webkit-transform: skewX(2deg); }
+    75% { -webkit-transform: skewX(-2deg); }
+}
+@keyframes steam {
+    0%, 100% {
+        transform: skewX(0deg);
+        opacity: 1;        
+    }
+    25% { transform: skewX(2deg); opacity:}
+    75% { transform: skewX(-2deg); opacity:}
 }
 
-#title img {
-  width: 20px;
-  float: left;
-  margin-top: -5px;
+#lava1 {
+	position:absolute;
+	z-index:-10;
+}
+
+#lava1 img{
+	width: 800px;
+}
+
+#eye img{
+	width: 600px;
+}
+
+#left {
+	overflow: hidden;
+	width: 15%;
+	height:800px;
+	float:left;
+	z-index: 20;
+}
+
+#center {
+	width: 70%;
+	height:800px;
+	float:left;
+	z-index: 20;
+
+}
+
+#right {
+	overflow: hidden;
+		width: 15%;
+	height:800px;
+	float:left;
+	z-index: 20;
+
+}
+
+#video {
+	width: 500px;
+	  top: 0; right: 0; /* confuse it i guess */
+    bottom: 0; left: 0;
+    margin: auto;
+	position:absolute;
+	-webkit-box-shadow: 41px 43px 73px 12px rgba(0,0,0,0.75);
+-moz-box-shadow: 41px 43px 73px 12px rgba(0,0,0,0.75);
+box-shadow: 41px 43px 73px 12px rgba(0,0,0,0.75);
+z-index:20;
+}
+
+#frame img{
+	width: 500px;
+	  top: 0; right: 0; /* confuse it i guess */
+    bottom: 0; left: 0;
+    margin: auto;
+	position:fixed;
+	-webkit-box-shadow: 41px 43px 73px 12px rgba(0,0,0,0.75);
+-moz-box-shadow: 41px 43px 73px 12px rgba(0,0,0,0.75);
+box-shadow: 41px 43px 73px 12px rgba(0,0,0,0.75);
+	z-index:22;
+}
+
+#quote {
+line-height: 90%;
+z-index: 1000;
+text-align: center;
+padding-top: 100px;
+font-size: 70px;
+color: white;
+text-shadow: 1px 1px 20px white;
+    -webkit-transform:scale(1,1.3); /* Safari and Chrome */
+    -moz-transform:scale(1,1.3); /* Firefox */
+    -ms-transform:scale(1,1.3); /* IE 9 */
+    -o-transform:scale(1,1.3); /* Opera */
+    transform:scale(1,1.3); /* W3C */
+ }
+
+h1 {
+	color:blue;
+	text-align:center;
+	font-size:140px;
+	font-family: "euro";
+	line-height: 90%;
+	text-shadow: 1px 1px 20px black;
+}
+
+.marquee {
+	z-index:30;
+    top: 6em;
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee2 {
+	z-index:30;
+    top: 6em;
+    position: relative;
+    box-sizing: border-box;
+    animation: marquee 15s linear infinite;
+}
+
+/* Make it move! */
+@keyframes marquee {
+    0%   { top:   8em }
+    100% { top: -30em }
 }
 
 #menu {
-  width: 50%;
-  height: 33px;
-  float: left;
-  border-bottom: 0.5px solid black;
-  background-color: white;
-}
-
-#menu h1 {
-  font-family: "fontp";
-  font-size: 14px;
-  margin-top: 10px;
-  margin-right: 20px;
-  text-align: right;
-}
-
-#menu h1 a {
-  text-decoration: none;
-  color: black;
-}
-
-#menu a:hover {
-  text-decoration: none;
-  color: red;
-}
-
-#workmenu {
-  width: 10%;
-  height: 100%;
-  float: left;
-  position:absolute;
-  margin-top: 33px;
-  border-right: 0.5px solid black;
-}
-
-#workmenu h1 {
-  font-family: "fontp";
-  font-size: 14px;
-  padding-top: 50px;
-  margin-left: 20px;
-  text-align: left;
-}
-
-#rain img {
-  width: 10px;
-}
-
-h3 {
-    font-family: "fontp";
-  float: left;
-  text-align:center;
-    padding: 0;
-    font-size: 90px;
-    position: relative;
-    overflow: auto;
-    color: blue;
-    margin-left:40px;
-    margin-right:40px;
-}
-.cover {
-    height: 500px;
-    width: 100%;
-    background: white;
-    position: absolute;
-    top: 0;
-    right: 0;
+	bottom:0;
+	height:40px;
+	background-color:black;
+	width:100%;
+	position:fixed;
+	margin:0;
+	z-index:1000;
 }

@@ -5,55 +5,230 @@
 <script src="jquery-3.2.0.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    <!-- Hide the script from old browsers
+    function getQuote() {
+      // Create the arrays
+      quotes = new Array(4);
+      sources = new Array(4);
+
+      // Initialize the arrays with quotes
+      quotes[0] = "THUNDERDOME: WHERE LIFE BEGINS, AND LOVE NEVER ENDS";
+      quotes[1] = "I WANNA SEE THE RAINBOW HIGH IN THE SKY. I WANNA SEE YOU AND ME ON A BIRD FLYING AWAY";
+      quotes[2] = "AND THEN I HOPE TO SEE YOUR SMILE EVERY NIGHT AND DAY";
+      quotes[3] = "WE ARE THE CHILDREN OF THE NIGHT, AND FIGHT FOR THE FUTURE OF OUR NATION. COME TOGETHER AND DENY, NOTHING IS GONNA STOP US NOW";
+      quotes[4] = "NOW THE MUSIC IS HAPPENING, I WANT EVERYONE TO BE FREE AND EASY. CAPTAIN TAKE MY HAND, AND TAKE ME TO DISCOLAND";
+      quotes[5] = "SO BABY WON'T YOU COME WITH ME, AND WE CAN FLY ON THE POWER OF LOVE";
+
+      // Get a random index into the arrays
+      i = Math.floor(Math.random() * quotes.length);
+
+      // Write out the quote as HTML
+      document.write("<dt>" + quotes[i] + "</i>");
+    }
+    // Stop hiding the script -->
+  </script>
 </head>
 
 <body>
 
-
-
 <div id="wrapper">
-<div id="title">
-<h1><img src="images/cursor.gif">Victoria Louise Young</h1>
-</div>
 <div id="menu">
-<h1><a href="work.html">Work</a> <a href="about.html">About</a> <a href="contact.html">Contact</a></h1>
-</div>
-<div id="box2">
-<h3><span>Hello there my name is Vikki, I like to fart? Can you hear me? This is my portfolio?<span class="cover"></span></h3>
+  <input type="button" id="randomtext" value="Random text"></input>
 <script>
-var $p = $('h3'),
-    $cover = $('.cover'),
-    width = $p.width(),
-    decrement = width / $p.text().length;
+$("#randomtext").click(function() {
+    loadshit();
+  });
 
-function addChar()
-{    
-    $cover.css('width', '-=' + decrement);
-    
-    if ( parseInt( $cover.css('width') ) < width )
-    {
-        setTimeout(addChar, 15);
+var counter =0;
+function loadshit(){ 
+    counter++;
+     //run when the document's ready, elements are loaded
+     $("#quote").empty();
+    $("#quote").append(quotes[counter]);
+    if (counter>=quotes.length-1) {
+        counter =0;
     }
 }
-
-addChar();
 </script>
 
-
+</div>
+<div id="left">
+  <h1 class="marquee">P<br>
+  E<br>
+  A<br>
+  C<br>
+  E<br><br>
+  L<br>
+  O<br>
+  V<br>
+  E<br><br>
+  &<br><br>
+  C<br>
+  O<br>
+  M<br>
+  M<br>
+  U<br>
+  N<br>
+  I<br>
+  T<br>
+  Y<br></h1>
 
 
 </div>
-<div id="rain">
-  <script type="text/javascript" SRC="himagefall/picture-fall.js">
-         </script>
+<div id="center">
+<div id="quote">
+    <script type="text/javascript">
+      <!-- Hide the script from old browsers
+      getQuote();
+      // Stop hiding the script
+    </script>
+</div>
+<!-- <div id="eye"><img src="images/160.png"></div> -->
+<div id="video"></div>
+<!-- <div id="frame"><img src="images/frame.png"></div> -->
+
+</div>
+<div id="right">
+    <h1 class="marquee2">P<br>
+  E<br>
+  A<br>
+  C<br>
+  E<br><br>
+  L<br>
+  O<br>
+  V<br>
+  E<br><br>
+  &<br><br>
+  C<br>
+  O<br>
+  M<br>
+  M<br>
+  U<br>
+  N<br>
+  I<br>
+  T<br>
+  Y<br></h1>
+</div>
+</div>
+
+</div>
+<div id="lava1">
+<img src="images/lava1.png">
+</div>
+<div id="background">
+<img src="images/background2.png">
 </div>
 
 
+<!--randomyoutube!-->
+    <script>
+(function(window, document, undefined) {
 
+    'use strict';
 
-</div>
+    function removeElement(array, element) {
+        return array.filter(function(el) {
+            return el !== element
+        });
+    }
 
+    function changeVideo() {
+        if (video.getCurrentTime() >= delay) {
+            var currentVideo = video.getVideoData().video_id,
+                randomVideo = removeElement(videoPlaylist, currentVideo)[Math.floor(Math.random() * (videoPlaylist.length - 1))];
+            video.loadVideoById(randomVideo);
+        }
+    }
 
+    function onPlayerStateChange(event) {
+        clearInterval(repeat);
+        if (event.data === 1) {
+            repeat = setInterval(changeVideo, 500);
+        }
+    }
+
+    window.onYouTubeIframeAPIReady = function() {
+        var randomVideo = videoPlaylist[Math.floor(Math.random() * videoPlaylist.length)];
+        video = new YT.Player('video', {
+            height: '315',
+            width: '560',
+            videoId: randomVideo,
+            playerVars: {
+                'autoplay': 1,
+                'controls': 0,
+                'showinfo': 0,
+               ' modestbranding': 1,
+                'iv_load_policy': 3
+            },
+            events: {
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    var tag = document.createElement('script'),
+        player,
+        videoPlaylist = ['FfggG4a7Y-0', '5_7HgbzeNBQ', 'gkxGs4ETeg4', '14S_s2epMaA', 'uXzPDKLif0c', 'HJnWEvq9W9I', 'jvBUIP94fD0'],
+        delay = 10, // s
+        repeat;
+
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+})(window, document);</script>
+
+<!--divanimations!-->
+<script language="javascript">
+$(document).ready(function() {
+    animateDiv($('#lava1'));
+        animateDiv($('#eye'));
+
+});
+
+function makeNewPosition($container) {
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $container.height() - 1;
+    var w = $container.width() - 1;
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh, nw];
+
+}
+
+function animateDiv($target) {
+    var newq = makeNewPosition($target.parent());
+    var oldq = $target.offset();
+    var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+    $target.animate({
+        top: newq[0],
+        left: newq[1]
+    }, speed, function() {
+        animateDiv($target);
+    });
+
+};
+
+function calcSpeed(prev, next) {
+
+    var x = Math.abs(prev[1] - next[1]);
+    var y = Math.abs(prev[0] - next[0]);
+
+    var greatest = x > y ? x : y;
+
+    var speedModifier = 0.04;
+
+    var speed = Math.ceil(greatest / speedModifier);
+
+    return speed;
+
+}
+</script>
 
 </body>
 </html>
